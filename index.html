@@ -290,6 +290,22 @@ section.s { padding: 120px 0; border-bottom: 1px solid var(--line); }
 .plan.pro .plan-btn { background: var(--inv); color: var(--ink); }
 .plan.pro .plan-btn:hover { background: var(--inv-2); }
 
+/* PRO — bloco de "50% off" em vez do preço */
+.plan.pro .plan-discount {
+  margin-bottom: 6px;
+}
+.plan.pro .plan-discount .num {
+  font-size: 48px; font-weight: 600; letter-spacing: -0.03em;
+  line-height: 1; color: var(--accent);
+}
+.plan.pro .plan-discount .per {
+  font-size: 14px; color: var(--inv-2); margin-left: 8px;
+}
+.plan.pro .plan-discount-sub {
+  font-size: 13px; color: var(--inv-3); margin-bottom: 28px;
+  line-height: 1.5;
+}
+
 /* WAITLIST */
 .waitlist-card { max-width: 540px; margin: 0 auto; text-align: center; background: var(--bg); border: 1px solid var(--line); border-radius: var(--r-xl); padding: 48px 36px; }
 .waitlist-card h2 { font-size: 32px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 12px; line-height: 1.2; }
@@ -711,10 +727,15 @@ footer { padding: 48px 0; background: var(--bg); }
         <a href="https://ulisses-dashboard-7s6vqnvhg6ppjjfmpxcpq6.streamlit.app/" target="_blank" class="plan-btn">Começar grátis</a>
       </div>
       <div class="plan pro reveal reveal-d1">
-        <div class="plan-pill">Recomendado</div>
+        <div class="plan-pill">Em breve</div>
         <div class="plan-tier">PRO</div>
-        <div class="plan-price"><span class="num">€29</span><span class="per">/ mês</span></div>
-        <p class="plan-cap">Tudo o que precisas para gerir carga como um profissional.</p>
+        <div class="plan-discount">
+          <span class="num">50% off</span>
+          <span class="per">no primeiro ano</span>
+        </div>
+        <p class="plan-discount-sub">
+          Para os primeiros 30 inscritos na lista de espera, quando o Pro abrir oficialmente.
+        </p>
         <ul>
           <li>Equipas e atletas ilimitados</li>
           <li>ACWR EWMA real-time</li>
@@ -749,7 +770,7 @@ footer { padding: 48px 0; background: var(--bg); }
         </div>
         <div class="faq-item">
           <h4>O que distingue do Catapult ou STATSports?</h4>
-          <p>O Catapult/STATSports são plataformas premium (15-40k€/ano) ligadas ao hardware deles. O LoadMonitor é software analítico standalone que aceita os teus dados de qualquer plataforma — a partir de 29€/mês.</p>
+          <p>O Catapult/STATSports são plataformas premium (15-40k€/ano) ligadas ao hardware deles. O LoadMonitor é software analítico standalone que aceita os teus dados de qualquer plataforma — com modelo de subscrição mensal acessível.</p>
         </div>
       </div>
       <div>
@@ -763,7 +784,7 @@ footer { padding: 48px 0; background: var(--bg); }
         </div>
         <div class="faq-item">
           <h4>Quando posso começar a usar o Pro?</h4>
-          <p>O Pro entra em beta privada em maio de 2026, com 5 vagas iniciais. Junta-te à lista de espera para garantir 50% de desconto no primeiro ano quando abrir.</p>
+          <p>O Pro entra em beta privada brevemente, com 5 vagas iniciais. Junta-te à lista de espera para garantir 50% de desconto no primeiro ano quando abrir.</p>
         </div>
       </div>
     </div>
@@ -777,7 +798,6 @@ footer { padding: 48px 0; background: var(--bg); }
       <h2>Bloqueia 50% de desconto.</h2>
       <p>
         Os primeiros <strong>30 inscritos</strong> têm <strong>50% off no primeiro ano</strong> quando o Pro for ativado.
-        <br><strong>14,50€/mês</strong> em vez de 29€/mês — bloqueado.
       </p>
 
       <div id="wl-success" class="wl-success">
