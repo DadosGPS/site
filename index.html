@@ -264,54 +264,49 @@ section.s { padding: 120px 0; border-bottom: 1px solid var(--line); }
 .step h3 { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px; }
 .step p { font-size: 14px; color: var(--ink-2); line-height: 1.6; }
 
-/* PRICING */
-.pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 880px; margin: 0 auto; }
-.plan { background: var(--bg); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 36px; position: relative; }
-.plan.pro { background: var(--ink); color: var(--inv); border-color: var(--ink); }
-.plan-pill { position: absolute; top: 24px; right: 24px; background: var(--accent); color: var(--inv); font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 100px; letter-spacing: 0.04em; text-transform: uppercase; }
-.plan-tier { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-3); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; }
-.plan.pro .plan-tier { color: var(--inv-3); }
-.plan-price { display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; }
-.plan-price .num { font-size: 48px; font-weight: 600; letter-spacing: -0.03em; line-height: 1; }
-.plan-price .per { font-size: 14px; color: var(--ink-3); }
-.plan.pro .plan-price .per { color: var(--inv-3); }
-.plan-cap { font-size: 14px; color: var(--ink-2); line-height: 1.55; margin-bottom: 28px; }
-.plan.pro .plan-cap { color: var(--inv-2); }
-.plan ul { list-style: none; display: flex; flex-direction: column; gap: 11px; margin-bottom: 32px; }
-.plan li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
-.plan.pro li { color: var(--inv-2); }
-.plan li::before { content: ''; width: 14px; height: 14px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%2316a34a' stroke-width='2.4'%3E%3Cpath d='M3 8L7 12L13 4'/%3E%3C/svg%3E"); background-size: contain; background-repeat: no-repeat; flex-shrink: 0; margin-top: 4px; }
-.plan li.off::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23a3a3a3' stroke-width='2.4'%3E%3Cpath d='M3 8H13'/%3E%3C/svg%3E"); }
-.plan li.off { color: var(--ink-4); }
-.plan.pro li.off { color: var(--inv-3); }
-.plan-btn { display: block; width: 100%; text-align: center; padding: 13px; border-radius: var(--r-sm); font-weight: 500; font-size: 14px; transition: all 0.15s; }
-.plan.free .plan-btn { background: var(--ink); color: var(--inv); }
-.plan.free .plan-btn:hover { background: var(--ink-2); }
-.plan.pro .plan-btn { background: var(--inv); color: var(--ink); }
-.plan.pro .plan-btn:hover { background: var(--inv-2); }
-
-/* PRO — bloco de "50% off" em vez do preço */
-.plan.pro .plan-discount {
-  margin-bottom: 6px;
+/* DEMO STATUS — substitui pricing durante a fase de demo */
+.demo-status {
+  max-width: 760px; margin: 0 auto; text-align: center;
+  background: var(--bg); border: 1px solid var(--line);
+  border-radius: var(--r-xl); padding: 48px 36px;
 }
-.plan.pro .plan-discount .num {
-  font-size: 48px; font-weight: 600; letter-spacing: -0.03em;
-  line-height: 1; color: var(--accent);
+.demo-status .badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent-bg); color: var(--accent);
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600;
+  padding: 6px 14px; border-radius: 100px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  margin-bottom: 20px;
 }
-.plan.pro .plan-discount .per {
-  font-size: 14px; color: var(--inv-2); margin-left: 8px;
+.demo-status .badge::before {
+  content: ''; width: 6px; height: 6px; background: var(--good); border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(22,163,74,0.4); animation: pulse 2s infinite;
 }
-.plan.pro .plan-discount-sub {
-  font-size: 13px; color: var(--inv-3); margin-bottom: 28px;
-  line-height: 1.5;
+.demo-status h3 { font-size: 28px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 14px; line-height: 1.2; }
+.demo-status p.lead { font-size: 16px; color: var(--ink-2); line-height: 1.55; margin-bottom: 28px; max-width: 540px; margin-left: auto; margin-right: auto; }
+.demo-features {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 12px 24px; margin: 28px auto 32px; max-width: 480px;
+  text-align: left;
 }
+.demo-features div {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 14px; color: var(--ink-2); line-height: 1.5;
+}
+.demo-features div::before {
+  content: ''; width: 14px; height: 14px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%2316a34a' stroke-width='2.4'%3E%3Cpath d='M3 8L7 12L13 4'/%3E%3C/svg%3E");
+  background-size: contain; background-repeat: no-repeat;
+  flex-shrink: 0; margin-top: 4px;
+}
+.demo-status .actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.demo-status .note { font-size: 13px; color: var(--ink-3); margin-top: 20px; line-height: 1.55; }
 
 /* WAITLIST */
 .waitlist-card { max-width: 540px; margin: 0 auto; text-align: center; background: var(--bg); border: 1px solid var(--line); border-radius: var(--r-xl); padding: 48px 36px; }
 .waitlist-card h2 { font-size: 32px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 12px; line-height: 1.2; }
 .waitlist-card p { font-size: 15px; color: var(--ink-2); line-height: 1.55; margin-bottom: 32px; }
 .waitlist-card p strong { color: var(--ink); font-weight: 600; }
-.waitlist-spots { display: inline-flex; align-items: center; gap: 8px; background: var(--accent-bg); color: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; padding: 6px 14px; border-radius: 100px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 24px; }
 .wl-form { display: flex; flex-direction: column; gap: 10px; text-align: left; }
 .wl-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .wl-input { width: 100%; background: var(--bg); border: 1px solid var(--line); border-radius: var(--r-sm); padding: 12px 14px; color: var(--ink); font-family: inherit; font-size: 14px; outline: none; transition: all 0.15s; }
@@ -378,7 +373,7 @@ footer { padding: 48px 0; background: var(--bg); }
   .science-grid { grid-template-columns: 1fr; gap: 40px; }
   .steps { grid-template-columns: 1fr; gap: 32px; }
   .steps::before { display: none; }
-  .pricing-grid { grid-template-columns: 1fr; }
+  .demo-features { grid-template-columns: 1fr; }
   .faq-grid { grid-template-columns: 1fr; gap: 0; }
   .wl-row { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
@@ -401,9 +396,8 @@ footer { padding: 48px 0; background: var(--bg); }
     <div class="nav-links">
       <a href="#features">Funcionalidades</a>
       <a href="#science">Ciência</a>
-      <a href="#pricing">Preços</a>
       <a href="#waitlist">Lista de espera</a>
-      <a href="https://ulisses-dashboard-7s6vqnvhg6ppjjfmpxcpq6.streamlit.app/" target="_blank" class="nav-cta">Começar grátis</a>
+      <a href="https://ulisses-dashboard-7s6vqnvhg6ppjjfmpxcpq6.streamlit.app/" target="_blank" class="nav-cta">Experimentar demo</a>
     </div>
   </div>
 </nav>
@@ -412,7 +406,7 @@ footer { padding: 48px 0; background: var(--bg); }
   <div class="container">
     <div class="hero-grid">
       <div class="hero-content">
-        <div class="hero-eyebrow">Em desenvolvimento — beta privada em maio</div>
+        <div class="hero-eyebrow">Demo aberta — em desenvolvimento</div>
         <h1>Decisões.<br>Não <span class="accent">tabelas</span>.</h1>
         <p class="lead">
           Plataforma de monitorização de carga para preparadores físicos.
@@ -420,15 +414,15 @@ footer { padding: 48px 0; background: var(--bg); }
         </p>
         <div class="hero-actions">
           <a href="https://ulisses-dashboard-7s6vqnvhg6ppjjfmpxcpq6.streamlit.app/" target="_blank" class="btn-primary">
-            Começar grátis
+            Experimentar demo
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <a href="#science" class="btn-ghost">Ver base científica</a>
         </div>
         <div class="hero-trust">
-          <span>14 dias Pro grátis</span>
+          <span>Acesso completo gratuito</span>
           <span>Sem cartão de crédito</span>
-          <span>Cancela quando quiseres</span>
+          <span>Funciona com o teu Excel</span>
         </div>
       </div>
       <div class="hero-visual">
@@ -702,52 +696,31 @@ footer { padding: 48px 0; background: var(--bg); }
   </div>
 </section>
 
-<section class="s" id="pricing">
+<section class="s" id="demo">
   <div class="container">
-    <div class="reveal">
-      <div class="s-eyebrow">Preços</div>
-      <h2 class="s-title">Simples. Sem contratos.</h2>
-      <p class="s-lead">Começa grátis. Faz upgrade quando precisares de mais.</p>
-    </div>
-    <div class="pricing-grid">
-      <div class="plan free reveal">
-        <div class="plan-tier">FREE</div>
-        <div class="plan-price"><span class="num">€0</span><span class="per">/ mês</span></div>
-        <p class="plan-cap">Para experimentar a app com dados próprios. Sem cartão.</p>
-        <ul>
-          <li>1 equipa · até 10 atletas</li>
-          <li>Dashboard básico (KPIs, evolução)</li>
-          <li>ACWR semanal</li>
-          <li>Wellness (Hooper Index)</li>
-          <li class="off">Alertas automáticos por jogador</li>
-          <li class="off">Análise GPS avançada</li>
-          <li class="off">Calculadora científica</li>
-          <li class="off">Relatórios PDF personalizáveis</li>
-        </ul>
-        <a href="https://ulisses-dashboard-7s6vqnvhg6ppjjfmpxcpq6.streamlit.app/" target="_blank" class="plan-btn">Começar grátis</a>
+    <div class="demo-status reveal">
+      <div class="badge">Demo aberta</div>
+      <h3>Acesso completo gratuito durante o desenvolvimento</h3>
+      <p class="lead">
+        Estamos em fase de demonstração. Todas as funcionalidades estão disponíveis para preparadores físicos
+        que queiram testar a plataforma e dar-nos feedback antes do lançamento oficial.
+      </p>
+      <div class="demo-features">
+        <div>Atletas e equipas ilimitados</div>
+        <div>Análise GPS multi-plataforma</div>
+        <div>ACWR, Hooper, Foster, Vmáx</div>
+        <div>Calculadora de exercícios</div>
+        <div>Relatórios automáticos</div>
+        <div>Alertas inteligentes</div>
       </div>
-      <div class="plan pro reveal reveal-d1">
-        <div class="plan-pill">Em breve</div>
-        <div class="plan-tier">PRO</div>
-        <div class="plan-discount">
-          <span class="num">50% off</span>
-          <span class="per">no primeiro ano</span>
-        </div>
-        <p class="plan-discount-sub">
-          Para os primeiros 30 inscritos na lista de espera, quando o Pro abrir oficialmente.
-        </p>
-        <ul>
-          <li>Equipas e atletas ilimitados</li>
-          <li>ACWR EWMA real-time</li>
-          <li>Todos os alertas automáticos</li>
-          <li>Análise GPS avançada (Vmáx, Sprint, HSR)</li>
-          <li>Calculadora científica de exercícios</li>
-          <li>Relatórios PDF personalizáveis</li>
-          <li>Notificações email</li>
-          <li>Suporte prioritário</li>
-        </ul>
-        <a href="#waitlist" class="plan-btn">Entrar na lista de espera</a>
+      <div class="actions">
+        <a href="https://ulisses-dashboard-7s6vqnvhg6ppjjfmpxcpq6.streamlit.app/" target="_blank" class="btn-primary">
+          Experimentar agora
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#waitlist" class="btn-ghost">Receber novidades</a>
       </div>
+      <p class="note">Sem cartão de crédito. Sem cobrança automática. O teu feedback é o nosso preço durante a fase de demo.</p>
     </div>
   </div>
 </section>
@@ -769,8 +742,8 @@ footer { padding: 48px 0; background: var(--bg); }
           <p>Os dados são guardados em base de dados encriptada na União Europeia (Supabase Frankfurt). Conformidade com RGPD. Apagamos a tua conta a pedido.</p>
         </div>
         <div class="faq-item">
-          <h4>O que distingue do Catapult ou STATSports?</h4>
-          <p>O Catapult/STATSports são plataformas premium (15-40k€/ano) ligadas ao hardware deles. O LoadMonitor é software analítico standalone que aceita os teus dados de qualquer plataforma — com modelo de subscrição mensal acessível.</p>
+          <h4>Posso exportar os meus dados?</h4>
+          <p>Sim. Os dados de origem ficam sempre no teu Excel — nunca dependes da plataforma para os teres. Os relatórios gerados podem ser exportados em PDF.</p>
         </div>
       </div>
       <div>
@@ -779,12 +752,12 @@ footer { padding: 48px 0; background: var(--bg); }
           <p>Sim. Foi desenhado para preparadores físicos individuais a operar em clubes amadores, distritais e formação profissional. Não precisas de hardware GPS — basta um Excel.</p>
         </div>
         <div class="faq-item">
-          <h4>Posso cancelar quando quiser?</h4>
-          <p>Sim. Sem contrato, sem permanência. Cancelas dentro da app e mantém acesso até ao fim do período pago. A versão Free continua disponível para sempre.</p>
+          <h4>Como vai funcionar quando sair da fase de demo?</h4>
+          <p>Estamos a finalizar o produto com base no feedback dos utilizadores. Quando a fase de demo terminar, avisamos com antecedência e damos opções claras para quem quiser continuar.</p>
         </div>
         <div class="faq-item">
-          <h4>Quando posso começar a usar o Pro?</h4>
-          <p>O Pro entra em beta privada brevemente, com 5 vagas iniciais. Junta-te à lista de espera para garantir 50% de desconto no primeiro ano quando abrir.</p>
+          <h4>O que distingue do Catapult ou STATSports?</h4>
+          <p>O Catapult/STATSports são plataformas premium ligadas ao hardware deles. O LoadMonitor é software analítico standalone que aceita os teus dados de qualquer plataforma — desenhado para preparadores físicos individuais e clubes que não têm orçamento para soluções enterprise.</p>
         </div>
       </div>
     </div>
@@ -794,15 +767,15 @@ footer { padding: 48px 0; background: var(--bg); }
 <section class="s" id="waitlist">
   <div class="container">
     <div class="waitlist-card reveal">
-      <div class="waitlist-spots">30 vagas · 50% off no primeiro ano</div>
-      <h2>Bloqueia 50% de desconto.</h2>
+      <h2>Recebe novidades quando avançarmos.</h2>
       <p>
-        Os primeiros <strong>30 inscritos</strong> têm <strong>50% off no primeiro ano</strong> quando o Pro for ativado.
+        Estamos em desenvolvimento ativo. Deixa o teu email e avisamos-te com as novidades importantes —
+        sem spam, só o que interessa.
       </p>
 
       <div id="wl-success" class="wl-success">
         <h3>Estás na lista</h3>
-        <p>Avisamos-te quando o Pro abrir, com 50% off bloqueado.</p>
+        <p>Avisamos-te com as próximas novidades.</p>
       </div>
 
       <div id="wl-error" class="wl-error"></div>
@@ -813,11 +786,11 @@ footer { padding: 48px 0; background: var(--bg); }
           <input type="email" name="email" placeholder="O teu email" class="wl-input" required>
         </div>
         <button type="submit" class="wl-btn" id="wl-submit">
-          <span id="wl-btn-text">Bloquear 50% off →</span>
+          <span id="wl-btn-text">Receber novidades →</span>
           <span id="wl-btn-loading" style="display:none">A enviar...</span>
         </button>
       </form>
-      <p class="wl-note">Sem spam · Avisamos quando o Pro abrir · Sair quando quiseres</p>
+      <p class="wl-note">Sem spam · Só novidades importantes · Sair quando quiseres</p>
     </div>
   </div>
 </section>
@@ -828,7 +801,7 @@ footer { padding: 48px 0; background: var(--bg); }
       <h2>Decisões, não tabelas.</h2>
       <p>Junta-te aos preparadores físicos que deixaram de perder horas em Excel.</p>
       <a href="https://ulisses-dashboard-7s6vqnvhg6ppjjfmpxcpq6.streamlit.app/" target="_blank" class="btn-primary">
-        Começar grátis por 14 dias
+        Experimentar a demo
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
@@ -850,8 +823,8 @@ footer { padding: 48px 0; background: var(--bg); }
         <ul>
           <li><a href="#features">Funcionalidades</a></li>
           <li><a href="#science">Base científica</a></li>
-          <li><a href="#pricing">Preços</a></li>
-          <li><a href="#waitlist">Lista de espera</a></li>
+          <li><a href="#demo">Demo</a></li>
+          <li><a href="#waitlist">Lista de novidades</a></li>
         </ul>
       </div>
       <div class="footer-col">
